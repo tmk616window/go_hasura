@@ -1,0 +1,1 @@
+CREATE TABLE "public"."task" ("id" integer, "title" text, "label" text NOT NULL, "status" text DEFAULT 'not', "deadline" timestamptz NOT NULL, "created_at" timestamptz DEFAULT now(), "updated_at" timestamptz DEFAULT now(), PRIMARY KEY ("id") );COMMENT ON TABLE "public"."task" IS E'task';
