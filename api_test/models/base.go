@@ -1,17 +1,15 @@
 package models
 
 import (
-	"api_test/config"
 	"fmt"
 
-	_ "github.com/go-sql-driver/mysql"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 func DbConnect() *gorm.DB {
-    db, err := gorm.Open(config.Config.SQLDriver, "user:password@tcp(test_db:3306)/test_db?charset=utf8&parseTime=True&loc=Local")
-    fmt.Println(config.Config.SQLDriver)
+    dsn := "host=postgresql_test user=user password=password dbname=test_db port=5432 sslmode=disable TimeZone=Asia/Tokyo"
+    db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
     if err != nil {
         panic(err.Error())
     }

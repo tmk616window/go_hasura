@@ -2,11 +2,13 @@ package main
 
 import (
 	"api_test/models"
+	"fmt"
 )
 
 
 func main() {
 	db := models.DbConnect()
-	defer db.Close()
-	db.LogMode(true)
+	fmt.Println(db)
+	// defer db.Close()
+	// db.LogMode(true)
 }

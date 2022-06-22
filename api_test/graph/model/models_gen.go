@@ -2,19 +2,30 @@
 
 package model
 
-type NewTodo struct {
-	Text   string `json:"text"`
-	UserID string `json:"userId"`
+import (
+	"api_test/graph/models"
+)
+
+type EditTodo struct {
+	ID   int    `json:"id"`
+	Text string `json:"text"`
 }
 
-type Todo struct {
-	ID   string `json:"id"`
-	Text string `json:"text"`
-	Done bool   `json:"done"`
-	User *User  `json:"user"`
+type FetchTodo struct {
+	ID int `json:"id"`
+}
+
+type NewTodo struct {
+	Text   string `json:"text"`
+	UserID int    `json:"userId"`
+}
+
+type NewUser struct {
+	Name string `json:"name"`
 }
 
 type User struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
+	ID    string         `json:"id"`
+	Name  string         `json:"name"`
+	Todos []*models.Todo `json:"todos"`
 }
