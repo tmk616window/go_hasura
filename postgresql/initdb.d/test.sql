@@ -1,4 +1,3 @@
-
 CREATE DATABASE test_db;
 
 \c test_db
@@ -34,5 +33,17 @@ CREATE TABLE "labels" (
 );
 
 insert into users (name) values ('test');
-insert into todos (text, status,user_id) values ('test', 'status', 1);
+insert into todos (text, status, user_id) values 
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1),
+  ('test', 'status', 1);
 insert into labels (label, todo_id) values ('label1', 1);

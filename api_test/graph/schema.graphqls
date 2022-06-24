@@ -15,6 +15,7 @@ type User {
 type Query {
   todos: [Todo!]!
   users: [User!]!
+  sortTodos(column: String!, sort: String!): [Todo!]!
   todo(input: Int!): Todo!
 }
 

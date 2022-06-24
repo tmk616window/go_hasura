@@ -54,6 +54,13 @@ func (r *queryResolver) Users(ctx context.Context) ([]*model.User, error) {
 	return users, nil
 }
 
+func (r *queryResolver) SortTodos(ctx context.Context, column string, sort string) ([]*models.Todo, error) {
+	var todos []*models.Todo
+	db := db.DbConnect()
+	db.Order(column + " " + sort).Find(&todos)
+	return todos, nil
+}
+
 func (r *queryResolver) Todo(ctx context.Context, input int) (*models.Todo, error) {
 	var todo models.Todo
 	db := db.DbConnect()

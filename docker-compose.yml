@@ -6,7 +6,6 @@ networks:
 
 services:
   api_test:
-    container_name: api_test
     # command: "go run server.go"
     build: ./api_test
     tty: true
